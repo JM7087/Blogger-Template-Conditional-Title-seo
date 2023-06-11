@@ -1,0 +1,27 @@
+<title>
+  <!-- Verifica se a URL atual é igual à URL da página inicial -->
+  <b:if cond='data:blog.url == data:blog.homepageUrl'>
+    <!-- Exibe o título da página seguido por um texto adicional -->
+    <data:blog.pageTitle/> - Um Pouco de Tudo.
+    <!--exemplo de como vai ficar o nome do blog - Um Pouco de Tudo. -->
+  <b:else/>
+    <!-- Se a URL atual não for a página inicial -->
+    <b:if cond='data:blog.pageType == &quot;index&quot;'>
+      <!-- Exibe o título da página -->
+      <!-- exemplo título da postagem - nome do blog-->
+      <data:blog.pageTitle/>
+  
+    <b:else/>
+      <!-- Se não for a página inicial nem a página de índice -->
+      <b:if cond='data:blog.pageType != &quot;error_page&quot;'>
+        <!-- Exibe o nome da página seguido pelo título do blog -->
+        <data:blog.pageName/> | <data:blog.title/>                                                                												 
+  
+      <b:else/>
+        <!-- Se for uma página de erro -->
+        404 | <data:blog.title/>
+      </b:if>
+    </b:if>
+  </b:if>
+</title>
+<!-- Criado por João Marcos - site: www.jm7087.com -->
